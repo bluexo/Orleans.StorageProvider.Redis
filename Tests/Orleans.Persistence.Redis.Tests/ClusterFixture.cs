@@ -29,7 +29,7 @@ namespace Orleans.Persistence.Redis.Tests
             Cluster.InitializeClient();
             Client = Cluster.Client;
 
-            var redisOptions = ConfigurationOptions.Parse("localhost:6379");
+            var redisOptions = ConfigurationOptions.Parse("192.168.124.88:6379");
             var connection = ConnectionMultiplexer.ConnectAsync(redisOptions).Result;
             Database = connection.GetDatabase();
             Console.WriteLine("Initialized Orleans TestCluster");
